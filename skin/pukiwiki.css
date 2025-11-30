@@ -1,0 +1,1679 @@
+@charset "UTF-8";
+
+
+/*これは上に置いとく。そうでないとフォントがなぜか太い感じになる*/
+@media print {
+  a:link,
+  a:visited {
+    text-decoration:underline;
+  }
+  img#logo,
+  div#navigator,
+  div#menubar,
+  div#rightbar,
+  div#related,
+  div#attach,
+  div#toolbar {
+    display:none;
+  }
+}
+
+
+
+
+
+
+/* =================================================================
+   EU5日本語Wiki 公式スタイルシート Ver 3.0
+   
+   - Theme Name: "The Royal Archive"
+   - Author: ゆいかせ
+   - Last Updated: 2025-09-25
+   
+   目次：
+   1. 基本設定 (Globals & Resets)
+   2. 基本的なHTML要素 (Base HTML Elements)
+   3. レイアウト構造 (Layout Structure)
+   4. PukiWiki特殊要素 (PukiWiki Specific Elements)
+   5. プラグイン別スタイル (Plugin Specific Styles)
+   6. モバイル対応 (Responsive & Mobile)
+   ================================================================= */
+
+
+/* =================================================================
+   1. 基本設定 (Globals & Resets)
+   ================================================================= */
+/*
+ * ここには、サイト全体の、最も、基本的な「ルール」を記述します。
+ * - Google Fontsの、インポート
+ * - 基本的な、マージンと、パディングの、リセット
+ */
+
+/*!
+ * PukiWiki - Yet another WikiWikiWeb clone.
+ * Copyright
+ *   2002-2021 PukiWiki Development Team
+ *   2001-2002 Originally written by yu-ji
+ * License: GPL v2 or (at your option) any later version
+ *
+ * Default CSS
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@700&display=swap');
+
+ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+/* =================================================================
+   2. 基本的なHTML要素 (Base HTML Elements)
+   ================================================================= */
+/*
+ * ここには、サイトの、最も、基本的な「見た目」を定義します。
+ * - body: 全体の背景色、文字色、フォント
+ * - a: リンクの色、ホバー効果
+ * - h1-h6: 全ての見出しに共通する、フォントファミリー
+ * - blockquote: 引用
+ * - pre: 整形済みテキスト
+ */
+
+/*旧*/
+
+td {
+  color:black;
+  background-color:white;
+  margin-left:2%;
+  margin-right:2%;
+  font-size:90%;
+  font-family:verdana, arial, helvetica, Sans-Serif;
+}
+
+/*1. ベース設計：羊皮紙とインク*/
+body {
+  background-color: #fdfaf4;
+  color: #3a3a3a;
+  font-size: 16px;
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.7;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+
+
+textarea {
+  box-sizing:border-box;
+  max-width:99.5%;
+}
+
+
+/*2-1. リンク：権威を示すロイヤルブルー*/
+
+a {
+  color: #0056b3; /* ★変更：より明るく、標準的なウェブの「青」に近い色へ */
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+a:visited {
+  color: #551a8b; /* ★変更：ウェブで標準的に使われる「紫」へ。訪問済みと明確にわかる */
+}
+
+a:hover {
+  color: #007bff; /* ★変更：ホバー時は、さらに鮮やかな青に */
+  text-decoration: underline;
+}
+
+
+
+
+
+/* --- 3.1. 全ての見出しの、基本リセットと、共通スタイル --- */
+h1, h2, h3, h4, h5, h6 {
+  /* まず、全ての、古の装飾を、無に帰す */
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 1.2em 0 0.8em 0; /* 基本的な、垂直方向の、余白 */
+  color: inherit; /* 親要素の色を、一旦、受け継ぐ */
+
+ /* 全ての見出しに、日本語対応の美しい明朝体を指定 */
+  font-family: 'Merriweather', 'Noto Serif JP', serif;
+  font-weight: 700;
+}
+
+/* --- 3.2. 個別の、見出しへの、装飾 --- */
+
+
+
+/* h2 (大見出し) */
+h2 {
+  font-size: 1.8em;
+  color: #2a4a75;
+  border-bottom: 1px solid #dcdcdc;
+  padding-bottom: 0.4em;
+}
+
+/* --- 見出し階層の最終調整 (A案) --- */
+
+/* h3 (中見出し) - 太い主線 */
+h3 {
+  font-size: 1.4em;
+  color: #3a3a3a;
+  padding-left: 0.8em;
+  /* ★太さを10pxに増やして、明確な区切りとする */
+  border-left: 10px solid #2a4a75; 
+}
+
+/* h4 (小見出し) - 太い主線 */
+h4 {
+  font-size: 1.2em;
+  color: #3a3a3a;
+  padding-left: 0.8em;
+  /* ★h3と太さを合わせ、色で違いを出す */
+  border-left: 10px solid #f0eada; 
+}
+
+/* h5 (第4レベル見出し) - 細い補助線 */
+h5 {
+  font-size: 1.1em;
+  color: #3a3a3a;
+  font-family: 'Merriweather', 'Noto Serif JP', serif;
+  font-style: normal;
+  font-weight: 700;
+  margin: 1em 0 0.6em 0;
+  padding-left: 0.8em;
+  /* ★太さを半分の5pxにし、補助的な見出しと分かるようにする */
+  border-left: 4px solid #2a4a75;
+}
+
+/* h6 (第5レベル見出し) - 細い補助線 */
+h6 {
+  font-size: 1.05em;
+  color: #555;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  margin: 1.2em 0 0.5em 0;
+  padding-left: 0.8em;
+  /* ★h5と太さを合わせる */
+  border-left: 4px solid #f0eada;
+}
+
+
+dt {
+  font-weight:bold;
+  margin-top:1em;
+  margin-left:1em;
+}
+
+pre {
+  margin-left: 1em;
+  margin-right: 2em;
+  background-color: #f5f1e8; /* 羊皮紙より少しだけ濃い、落ち着いた背景色 */
+  border: 1px solid #dcd5c6; /* テーマに合った、柔らかい境界線 */
+  border-radius: 4px;
+  padding: 1em;
+  color: #4a4a4a; /* 文字色も少し調整 */
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; /* 可読性の高い等幅フォントを指定 */
+  line-height: 1.5; /* 行間を少し広げて読みやすく */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+
+
+img {
+  border:none;
+  vertical-align:middle;
+}
+
+ul {
+  margin-top:.5em;
+  margin-bottom:.5em;
+  line-height:130%;
+}
+
+em {
+  font-style:italic;
+}
+
+strong {
+  font-weight:bold;
+}
+
+hr.full_hr {
+  border-style:ridge;
+  border-color:#333333;
+  border-width:1px 0;
+}
+hr.note_hr {
+  width:90%;
+  border-style:ridge;
+  border-color:#333333;
+  border-width:1px 0;
+  text-align:center;
+  margin:1em auto 0em auto;
+}
+
+
+p {
+    margin-bottom: 1em;
+}
+
+
+
+/* =================================================================
+   3. レイアウト構造 (Layout Structure)
+   ================================================================= */
+/*
+ * ここには、サイトの、主要な「骨格」を定義します。
+ * - div#header: ヘッダー領域
+ * - img#logo: ロゴ画像
+ * - h1.title: ページタイトル
+ * - div#contents: メインコンテンツ領域
+ * - div#body: 本文領域
+ * - div#menubar: メニューバー領域
+ * - div#footer: フッター領域
+ */
+
+/*旧*/
+
+/* pukiwiki.skin.php */
+div#header {
+  padding:0;
+  margin:0;
+  word-break:break-all;
+}
+/*6-1. ヘッダーとフッターの調整*/
+div#header {
+  border-bottom: 1px solid #dcdcdc;
+  padding-bottom: 1em;
+  margin:0; /* PukiWikiデフォルトCSSの上書き */
+}
+
+
+img#logo {
+  float:left;
+  margin-right:20px;
+}
+
+
+/*3-2. 見出し：年代記の章立て（フォントと余白を調整）*/
+
+/* h1 (ページタイトル) */
+h1.title {
+  font-size: 2.2em;
+  font-weight:bold;
+  border-bottom: 2px solid #c5a15a;
+  padding-bottom: 0.5em;
+  margin: 1em 0 0.8em 0; /* 余白を調整 */
+  color: #2d2a26;
+  background-color: transparent; /* PukiWikiデフォルトCSSの上書き */
+}
+
+
+
+div#navigator {
+  clear:both;
+  padding:4px 0 0 0;
+  margin:0;
+}
+
+
+
+
+
+#rightbar {
+  min-width:14em;
+  max-width:14em;
+  padding:0;
+  margin:4px;
+  font-size:90%;
+  overflow:hidden;
+  order:3;
+  flex-grow:0;
+}
+#rightbar ul {
+  margin:0 0 0 1em;
+  padding:0 0 0 .5em;
+}
+#rightbar ul li {
+  line-height:110%;
+}
+#rightbar h4 {
+  font-size:110%;
+}
+
+
+
+/* -----------------------------------------------
+   診断3への処方：注釈エリアのスタイル定義
+   ----------------------------------------------- */
+div#note {
+  clear: both;
+  font-size: 0.85em; /* フォントサイズを小さくし、本文との階層差を明確に */
+  color: #5a5a5a;
+  margin: 2.5em 0 0 0; /* 上のコンテンツとの余白を十分に確保 */
+  padding: 1.5em 0 0 0; /* 境界線との余白 */
+  border-top: 1px solid #dcd5c6; /* 本文とを区切る境界線 */
+  word-break:break-all;
+}
+
+/* -----------------------------------------------
+   処方4：注釈エリアのスタイルを強制適用する
+   ----------------------------------------------- */
+/* div#note と、その内部の全ての要素に適用する */
+div#note, div#note * {
+  font-size: 0.85em !important; /* !importantで他のスタイルを上書き */
+  font-family: 'Noto Sans JP', sans-serif !important; /* 本文と同じフォントを強制 */
+  font-style: normal !important; /* 斜体をリセット */
+  font-weight: 400 !important; /* 太字をリセット */
+  color: #5a5a5a !important;
+}
+
+
+
+
+
+
+div#attach {
+  clear:both;
+  padding:0;
+  margin:0;
+}
+div#toolbar {
+  clear:both;
+  padding:0;
+  margin:0;
+  text-align:right;
+}
+div#lastmodified {
+  font-size:80%;
+  padding:0;
+  margin:0;
+}
+div#related {
+  font-size:80%;
+  padding:0;
+  margin:16px 0 0 0;
+}
+div#related .page_passage {
+  font-size:60%;
+}
+
+
+/*6-2. ヘッダーとフッターの調整*/
+div#footer {
+  font-size:70%;
+  margin: 2em 0 0 0;
+  padding: 1em 0 0 0;
+  border-top: 1px solid #dcdcdc;
+  color: #5E5E5E; /* ← 新しい、基準値を満たす灰色 */
+}
+
+div#banner {
+  float:right;
+  margin-top:24px;
+}
+div#preview {
+  color:inherit;
+  background-color:#F5F8FF;
+}
+
+
+
+
+
+
+/* =================================================================
+   4. PukiWiki特殊要素 (PukiWiki Specific Elements)
+   ================================================================= */
+/*
+ * ここには、PukiWikiが、自動的に生成する、特殊なクラスを持つ要素の、スタイルを定義します。
+ * - .style_table, .style_th, .style_td: テーブル
+ * - div#note: 注釈
+ * - span.noexists: 存在しないページへのリンク
+ * - その他、あなたが、カスタマイズしたい、PukiWikiの、特殊要素
+ */
+
+/*旧*/
+pre, dl, ol, p, blockquote {
+  line-height:130%;
+}
+
+
+/*5-1. その他：引用やコードブロックの調整*/
+
+blockquote {
+  border-left: 4px solid #c5a15a;
+  padding: 0.5em 1.5em;
+  margin: 1.5em 0;
+  background-color: rgba(245, 241, 232, 0.5);
+}
+
+
+
+/*2-2. リンク：権威を示すロイヤルブルー*/
+a.external-link:not(.external-link-silent)::after {
+  opacity: 0.7;
+  content:url(../image/external-link.png);
+  margin:3px;
+}
+
+
+
+
+
+thead td.style_td,
+tfoot td.style_td {
+  color:inherit;
+  background-color:#D0D8E0;
+}
+thead th.style_th,
+tfoot th.style_th {
+  color:inherit;
+  background-color:#E0E8F0;
+}
+
+
+/*4. テーブル（表）：戦略データを見やすく*/
+
+.style_table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: transparent;
+  margin: 1.5em auto;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  padding:0;
+  border:0;
+  text-align:left;
+  color:inherit;
+
+}
+.style_th, .style_td {
+  padding: 10px 12px;
+  border: 1px solid #dcdcdc;
+  background-color: #fbf8f2; /* 純白から、羊皮紙に馴染むオフホワイトに変更 */
+  text-align: left;
+  margin:1px;
+  color:inherit;
+}
+.style_th {
+  background-color: #f2f2f2;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  text-align: center;
+}
+
+
+
+ul.list1 {
+  list-style-type:disc;
+}
+ul.list2 {
+  list-style-type:circle;
+}
+ul.list3 {
+  list-style-type:square;
+}
+ol.list1 {
+  list-style-type:decimal;
+}
+ol.list2 {
+  list-style-type:lower-roman;
+}
+ol.list3 {
+  list-style-type:lower-alpha;
+}
+
+.list-indent1 {
+  padding-left:16px;
+  margin-left:16px;
+}
+/* list-indent2,3,4 are used for leaping list level indentation */
+.list-indent2 {
+  padding-left:32px;
+  margin-left:32px;
+}
+.list-indent3 {
+  padding-left:48px;
+  margin-left:48px;
+}
+.list-indent4 {
+  padding-left:64px;
+  margin-left:64px;
+}
+
+div.ie5 {
+  text-align:center;
+}
+span.noexists {
+  color:inherit;
+  background-color:#FFFACC;
+}
+
+.small {
+  font-size:80%;
+}
+
+.super_index {
+  color:#DD3333;
+  background-color:inherit;
+  font-weight:bold;
+  font-size:60%;
+  vertical-align:super;
+}
+
+a.note_super {
+  color:#DD3333;
+  background-color:inherit;
+  font-weight:bold;
+  font-size:60%;
+  vertical-align:super;
+}
+
+div.jumpmenu {
+  font-size:60%;
+  text-align:right;
+  user-select:none;
+}
+
+
+span.size1 {
+  font-size:xx-small;
+  line-height:130%;
+  text-indent:0;
+  display:inline;
+}
+span.size2 {
+  font-size:x-small;
+  line-height:130%;
+  text-indent:0;
+  display:inline;
+}
+span.size3 {
+  font-size:small;
+  line-height:130%;
+  text-indent:0;
+  display:inline;
+}
+span.size4 {
+  font-size:medium;
+  line-height:130%;
+  text-indent:0;
+  display:inline;
+}
+span.size5 {
+  font-size:large;
+  line-height:130%;
+  text-indent:0;
+  display:inline;
+}
+span.size6 {
+  font-size:x-large;
+  line-height:130%;
+  text-indent:0;
+  display:inline;
+}
+span.size7 {
+  font-size:xx-large;
+  line-height:130%;
+  text-indent:0;
+  display:inline;
+}
+
+/* html.php/catbody() */
+strong.word0 {
+  background-color:#FFFF66;
+  color:black;
+}
+strong.word1 {
+  background-color:#A0FFFF;
+  color:black;
+}
+strong.word2 {
+  background-color:#99FF99;
+  color:black;
+}
+strong.word3 {
+  background-color:#FF9999;
+  color:black;
+}
+strong.word4 {
+  background-color:#FF66FF;
+  color:black;
+}
+strong.word5 {
+  background-color:#880000;
+  color:white;
+}
+strong.word6 {
+  background-color:#00AA00;
+  color:white;
+}
+strong.word7 {
+  background-color:#886800;
+  color:white;
+}
+strong.word8 {
+  background-color:#004699;
+  color:white;
+}
+strong.word9 {
+  background-color:#990099;
+  color:white;
+}
+
+/* html.php/edit_form() */
+.edit_form {
+  clear:both;
+}
+.edit_form textarea,.edit_form select {
+  width:95%;
+}
+
+
+
+/* =================================================================
+   5. プラグイン別スタイル (Plugin Specific Styles)
+   ================================================================= */
+/*
+ * ここには、特定の「プラグイン」が生成する、要素の、スタイルを定義します。
+ * - div#menubar内の、各種要素（見出し、フォーム、リンク）
+ * - div.pcomment_part, div.pcomment_body など、pcommentプラグインの、全要素
+ * - その他、あなたが、スタイルを、カスタマイズしたい、プラグイン
+ */
+
+/*旧*/
+/* aname.inc.php */
+.anchor_super {
+  font-size:xx-small;
+  vertical-align:super;
+  margin-left:.5em;
+}
+
+/* list.inc.php */
+.page_passage {
+  font-size:small;
+}
+
+/* calendar*.inc.php */
+.style_calendar {
+  padding:0;
+  border:0;
+  margin:3px;
+  color:inherit;
+  background-color:#CCD5DD;
+  text-align:center;
+}
+.style_td_caltop {
+  padding:5px;
+  margin:1px;
+  color:inherit;
+  background-color:#EEF5FF;
+  font-size:80%;
+  text-align:center;
+}
+.style_td_today {
+  padding:5px;
+  margin:1px;
+  color:inherit;
+  background-color:#FFFFDD;
+  text-align:center;
+}
+.style_td_sat {
+  padding:5px;
+  margin:1px;
+  color:inherit;
+  background-color:#DDE5FF;
+  text-align:center;
+}
+.style_td_sun {
+  padding:5px;
+  margin:1px;
+  color:inherit;
+  background-color:#FFEEEE;
+  text-align:center;
+}
+.style_td_blank {
+  padding:5px;
+  margin:1px;
+  color:inherit;
+  background-color:#EEF5FF;
+  text-align:center;
+}
+.style_td_day {
+  padding:5px;
+  margin:1px;
+  color:inherit;
+  background-color:#EEF5FF;
+  text-align:center;
+}
+.style_td_week {
+  padding:5px;
+  margin:1px;
+  color:inherit;
+  background-color:#DDE5EE;
+  font-size:80%;
+  font-weight:bold;
+  text-align:center;
+}
+
+/* calendar_viewer.inc.php */
+div.calendar_viewer {
+  color:inherit;
+  background-color:inherit;
+  margin-top:20px;
+  margin-bottom:10px;
+  padding-bottom:10px;
+}
+span.calendar_viewer_left {
+  color:inherit;
+  background-color:inherit;
+  float:left;
+}
+span.calendar_viewer_right {
+  color:inherit;
+  background-color:inherit;
+  float:right;
+}
+
+/* clear.inc.php */
+.clear {
+  margin:0;
+  clear:both;
+}
+
+/* counter.inc.php */
+div.counter {
+  font-size:70%;
+}
+
+/* diff.inc.php */
+span.diff_added {
+  color:blue;
+  background-color:inherit;
+}
+span.diff_removed {
+  color:red;
+  background-color:inherit;
+}
+
+/* hr.inc.php */
+hr.short_line {
+  text-align:center;
+  width:80%;
+  border-style:solid;
+  border-color:#333333;
+  border-width:1px 0;
+}
+
+/* include.inc.php */
+h5.side_label {
+  text-align:center;
+}
+
+/* navi.inc.php */
+ul.navi {
+  margin:0;
+  padding:0;
+  text-align:center;
+}
+li.navi_none {
+  display:block;
+  float:none;
+}
+li.navi_left {
+  display:block;
+  float:left;
+  text-align:left;
+}
+li.navi_right {
+  display:block;
+  float:right;
+  text-align:right;
+}
+
+/* new.inc.php */
+span.comment_date {
+  font-size:x-small;
+}
+span.new1 {
+  color:red;
+  background-color:transparent;
+  font-size:x-small;
+}
+span.new5 {
+  color:green;
+  background-color:transparent;
+  font-size:xx-small;
+}
+
+/* comment.inc.php */
+._p_comment_form input[name="msg"] {
+  max-width:90%;
+}
+
+/*診断2への処方：フォーム要素のスタイル定義*/
+/* テキスト入力ボックス */
+._p_comment_form input[type="text"] {
+  background-color: #fff;
+  border: 1px solid #dcd5c6;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-family: 'Noto Sans JP', sans-serif; /* 本文と同じフォントを適用 */
+  font-size: 0.9em;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+/* テキスト入力ボックスが選択された時 */
+._p_comment_form input[type="text"]:focus {
+  outline: none;
+  border-color: #2a4a75; /* テーマカラーの青でハイライト */
+  box-shadow: 0 0 0 2px rgba(42, 74, 117, 0.1);
+}
+
+/* 送信ボタン */
+._p_comment_form input[type="submit"] {
+  background-color: #2a4a75; /* テーマカラーの青を背景に */
+  color: #ffffff; /* 文字色を白に */
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  cursor: pointer; /* マウスカーソルを指の形に */
+  transition: background-color 0.2s ease;
+}
+/* 送信ボタンにマウスが乗った時 */
+._p_comment_form input[type="submit"]:hover {
+  background-color: #4b7bc4; /* 少し明るい青に */
+}
+
+/* pcomment.inc.php */
+._p_pcomment_form input[name="msg"] {
+  max-width:90%;
+}
+
+/* article.inc.php */
+._p_article_form input[name="subject"] {
+  max-width:82%;
+}
+
+/* popular.inc.php */
+span.counter {
+  font-size:70%;
+}
+
+/* ref.inc.php */
+div.img_margin {
+  margin-left:32px;
+  margin-right:32px;
+}
+
+/* vote.inc.php */
+td.vote_label {
+  color:inherit;
+  background-color:#FFCCCC;
+}
+td.vote_td1 {
+  color:inherit;
+  background-color:#DDE5FF;
+}
+td.vote_td2 {
+  color:inherit;
+  background-color:#EEF5FF;
+}
+
+/* topicpath.inc.php */
+span.topicpath-slash {
+  margin:0 0.2em;
+}
+span.topicpath-top {
+  user-select:none;
+}
+
+/* bugtrack.inc.php */
+tr.bugtrack_list_header th {
+  background-color:#ffffcc;
+}
+tr.bugtrack_list_header th:nth-child(1) {
+  min-width: 7em;
+}
+tr.bugtrack_list_header th:nth-child(2) {
+  min-width: 2em;
+}
+tr.bugtrack_list_header th:nth-child(3) {
+  min-width: 4em;
+}
+tr.bugtrack_list_header th:nth-child(4) {
+  min-width: 4em;
+}
+tr.bugtrack_list_header th:nth-child(5) {
+  min-width: 3em;
+}
+tr.bugtrack_state_proposal td {
+  background-color:#ccccff;
+}
+tr.bugtrack_state_accept td {
+  background-color:#ffcc99;
+}
+tr.bugrack_state_resolved td {
+  background-color:#ccffcc;
+}
+tr.bugtrack_state_pending td {
+  background-color:#ffccff;
+}
+tr.bugtrack_state_cancel td {
+  background-color:#cccccc;
+}
+tr.bugtrack_state_undef td {
+  background-color:#ff3333;
+}
+._p_bugtrack_form input[name="summary"],
+._p_bugtrack_form textarea {
+  box-sizing:border-box;
+  width:35em;
+  max-width:99.5%;
+}
+
+/* tracker.inc.php */
+._p_tracker_form th {
+  min-width:5em;
+}
+
+/* search2.inc.php  */
+.search-result-page-summary {
+  font-size:70%;
+  color:gray;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------------------------
+   1. コメント欄全体のコンテナ
+   ----------------------------------------------- */
+div.pcomment_part {
+  margin-top: 2em;
+  padding-top: 1.5em;
+  border-top: 1px solid #dcd5c6; /* 本文とを区切る境界線 */
+}
+
+/* -----------------------------------------------
+   2. 個別のコメントブロック
+   ----------------------------------------------- */
+div.pcomment_body {
+  padding: 1em 1.5em;
+  margin-bottom: 1em;
+  background-color: #ffffff; /* コメントの背景を、読みやすい白に */
+  border: 1px solid #dcd5c6;
+  border-left: 5px solid #c5a15a; /* 左側にテーマカラーの金色のアクセント */
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* 引用されたコメント（返信先）のスタイル */
+div.pcomment_body blockquote {
+  border-left: 3px solid #ccc;
+  padding: 0.5em 1em;
+  margin: 0.5em 0 1em 0;
+  background-color: #f5f1e8; /* 引用部分の背景を少し変える */
+  font-size: 0.9em;
+  color: #5a5a5a;
+}
+
+/* -----------------------------------------------
+   3. コメントのメタ情報（名前、日付、各種リンク）
+   ----------------------------------------------- */
+div.pcomment_name {
+  font-weight: 500;
+  font-size: 0.9em;
+  color: #3a3a3a;
+  margin-bottom: 0.5em;
+}
+
+div.pcomment_name span,
+div.pcomment_name a {
+  font-size: 0.9em;
+  font-weight: 400;
+  color: #777;
+  margin-left: 0.8em;
+}
+
+/* -----------------------------------------------
+   4. コメント投稿フォーム
+   ----------------------------------------------- */
+form._p_pcomment_form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #dcd5c6;
+  border-radius: 4px;
+  padding: 10px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1em;
+  min-height: 80px; /* テキストエリアの最小の高さを確保 */
+  margin-bottom: 10px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+form._p_pcomment_form textarea:focus {
+  outline: none;
+  border-color: #2a4a75;
+  box-shadow: 0 0 0 2px rgba(42, 74, 117, 0.1);
+}
+
+/* 「お名前」入力欄と「投稿」ボタンは、以前の定義を再利用・確認 */
+form._p_pcomment_form input[type="text"] {
+  background-color: #fff;
+  border: 1px solid #dcd5c6;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: 0.9em;
+}
+form._p_pcomment_form input[type="submit"] {
+  background-color: #2a4a75;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+form._p_pcomment_form input[type="submit"]:hover {
+  background-color: #4b7bc4;
+}
+
+
+
+
+/* =================================================================
+   5.1. MenuBar Custom Style - The Royal Archive (Hierarchy Final)
+   ================================================================= */
+/* --- MenuBar内の視覚的な階層を最終調整 --- */
+
+/* 1. 全ての見出しのフォントはサンセリフ体で統一 */
+div#menubar h2,
+div#menubar h3,
+div#menubar h4 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+  margin: 1.5em 0 0.8em 0;
+  padding: 0;
+  border: none;
+}
+
+/* 2. h2: 最も大きな区切り（章タイトル） - 変更なし */
+div#menubar h2 {
+  font-size: 1.1em;
+  color: #2a4a75;
+  padding-bottom: 0.4em;
+  margin-bottom: 0.6em;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+/* 3. h3: 中くらいの区切り（節タイトル） - ★デザインを大幅に強化 */
+div#menubar h3 {
+  font-size: 1.05em;
+  font-weight: 500;
+  color: #3a3a3a;
+  background-color: #f2f2f2; /* テーブルヘッダと同じ、構造を示す背景色 */
+  padding: 8px 12px;
+  border: 1px solid #dcd5c6;
+  border-left: 5px solid #2a4a75; /* h2と共通のロイヤルブルーで権威性を示す */
+  border-radius: 3px;
+}
+
+/* 4. h4: 小さな区切り（項タイトル） - ★デザインをh3に従属させる */
+div#menubar h4 {
+  font-size: 1em;
+  font-weight: 500;
+  color: #2d2a26;
+  margin: 1.2em 0 0.5em 0; /* 上下の余白を少し詰める */
+  padding-left: 0.8em;
+  border-left: 10px solid #c5a15a; /* 金色の装飾は維持 */
+  /* 下線をなくし、自己主張を抑える */
+}
+
+/* 5. 本文（リスト項目）のスタイルは変更なし */
+div#menubar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+div#menubar ul li a {
+  display: block;
+  padding: 6px 8px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+div#menubar ul li a:hover {
+  background-color: #e0d8c8;
+  text-decoration: none;
+}
+
+
+
+
+
+
+/* MenuBar内の全てのフォーム要素を包括的にターゲットする */
+
+/* テキスト入力ボックス */
+div#menubar form input[type="text"] {
+  width: 80%;
+  box-sizing: border-box; /* padding等を含めて幅を計算 */
+  margin-bottom: 5px;
+}
+
+/* 送信ボタン */
+div#menubar form input[type="submit"] {
+  width: 80%;
+  box-sizing: border-box;
+}
+
+div#menubar ul {
+  margin:0 0 0 1em;
+}
+div#menubar ul li {
+  line-height:110%;
+}
+
+
+/* MenuBar内のリンクのタップ領域を確保する */
+div#menubar ul li a {
+  display: inline-block; /* paddingを有効にするため */
+  padding: 4px 0;      /* 上下に4pxの余白を追加 */
+}
+
+
+
+
+
+
+
+
+
+/* =================================================================
+   PukiWiki Plugin Override: FlexList "The Royal Archive" Theme
+   Last Updated: [YYYY-MM-DD]
+   ================================================================= */
+
+/* 
+ * NOTE: このスタイルは、flexlist.inc.php が出力するデフォルトスタイルを
+ * 上書き（オーバーライド）するために設計されています。
+ * This stylesheet is designed to override the default styles
+ * output by flexlist.inc.php.
+ */
+
+/* --- 全体コンテナ / Main Container --- */
+/* NOTE: プラグイン名は `FlexList` に変更したため、IDは `body #flexlist-engine` になります */
+body #flexlist-engine {
+  border-color: #dcd5c6;
+  background-color: #fbf8f2;
+  margin: 1.5em 0;
+}
+
+/* --- 操作パネル / Controls Panel --- */
+body #flexlist-engine .controls {
+  background-color: #f9f6f0;
+  border-bottom-color: #dcdcdc;
+}
+
+/* フォーム要素（検索、ドロップダウン） */
+body #flexlist-engine .controls .search,
+body #flexlist-engine .controls .group-by-select,
+body #flexlist-engine .controls .pagination-select {
+  border-color: #ccc;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+/* フォーカス時の色をテーマに合わせる */
+body #flexlist-engine .controls .search:focus,
+body #flexlist-engine .controls .group-by-select:focus,
+body #flexlist-engine .controls .pagination-select:focus {
+  border-color: #2a4a75;
+  box-shadow: 0 0 0 2px rgba(42, 74, 117, 0.1);
+}
+
+/* --- ヘッダー(th) / Table Header --- */
+body #flexlist-engine th {
+  background-color: #f2f2f2;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+}
+
+/* in pukiwiki.css */
+
+/* --- ソートボタン / Sort Button --- */
+body #flexlist-engine .sort {
+  color: #3a3a3a;
+  font-weight: bold;
+}
+body #flexlist-engine .sort:hover {
+  background-color: #e8e8e8;
+}
+/* ソート適用時の矢印の色を、テーマのリンク色に */
+body #flexlist-engine .sort.asc::after,
+body #flexlist-engine .sort.desc::after {
+  color: #2a4a75;
+}
+
+/* --- フィルター機能 / Filter Feature --- */
+body #flexlist-engine .filter-toggle:hover {
+  background-color: #e0d8c8;
+}
+body #flexlist-engine .filter-popup {
+  border-color: #ccc;
+}
+body #flexlist-engine .filter-popup label:hover {
+  background-color: #f5f5f5;
+}
+
+/* --- グループヘッダー (王立図書館テーマ) / Group Header (Royal Archive Theme) --- */
+/* 全てのグループヘッダーに共通する、基本的なスタイル */
+#flexlist-engine .group-header-row td {
+    border-top: 2px solid #dcd5c6; /* テーマに合わせた境界線 */
+    border-bottom: 1px solid #dcd5c6;
+    padding: 10px 15px;
+    font-family: 'Merriweather', 'Noto Serif JP', serif; /* 見出し用フォント */
+}
+
+/* 大グループ (Level 1) のヘッダー */
+#flexlist-engine .group-header-level-1 td {
+    background-color: #f5f1e8; /* 羊皮紙より少し濃い背景 */
+    color: #2a4a75; /* ロイヤルブルーの文字 */
+    font-size: 1.2em; /* 少し大きめの文字 */
+    font-weight: 700;
+}
+
+/* 小グループ (Level 2) のヘッダー */
+#flexlist-engine .group-header-level-2 td {
+    background-color: #fdfaf4; /* 羊皮紙と同じ背景 */
+    color: #3a3a3a;
+    font-size: 1.1em;
+    padding-left: 30px; /* インデントで階層を表現 */
+}
+
+
+/* --- ページネーション / Pagination --- */
+body #flexlist-engine .pagination a {
+  color: #2a4a75; /* テーマのリンク色 */
+}
+body #flexlist-engine .pagination a:hover {
+  background-color: #e0d8c8;
+  text-decoration: none;
+}
+/* アクティブなページ番号を、テーマの金色でハイライト */
+body #flexlist-engine .pagination .active a {
+  background-color: #c5a15a;
+  color: #ffffff;
+  border-color: #c5a15a;
+}
+
+
+
+
+
+/* =================================================================
+   6. モバイル対応 (Responsive & Mobile)
+   ================================================================= */
+/*
+ * ここには、画面の幅に応じて、スタイルを、変化させるための、全てのルールを、記述します。
+ * - モバイル用の、オフキャンバスメニュー
+ * - PC用の、メニューボタンの、非表示
+ */
+
+
+
+
+/* =================================================================
+   6.0. Mobile Layout Final Fix - Force Override
+   ================================================================= */
+@media (max-width: 767px) {
+    /* ★根本原因の強制修正：
+       モバイル表示の際、bodyの左右マージンを!importantで強制的に0にする。
+       これにより、position:fixedのleft:0が画面の本当の左端に配置される。
+    */
+    body {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* 本文が画面端に詰まらないように、主要コンテンツブロックに内側の余白を追加 */
+    div#header,
+    div#contents,
+    div#footer {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+
+
+
+
+/* =================================================================
+   6.1 PC用 3カラムレイアウト (1201px以上) - スクロール修正版
+   ================================================================= */
+@media (min-width: 1201px) {
+    div#contents { display: flex; flex-direction: row; align-items: flex-start; }
+    
+    div#menubar {
+        flex: 0 0 260px;
+        margin-right: 25px;
+        position: sticky; 
+        top: 20px; 
+        /* ★重要：高さを画面いっぱいまでに制限する */
+        max-height: calc(100vh - 40px); 
+        overflow-y: auto; /* 中身が溢れたらスクロール */
+        
+        overscroll-behavior: contain;
+
+
+        background-color: #f5f1e8; border: 1px solid #dcd5c6; border-radius: 5px;
+        padding: 20px 15px; box-sizing: border-box;
+        
+        /* Firefox用スクロールバー設定 */
+        scrollbar-width: thin;
+        scrollbar-color: #c5a15a #f0eada;
+    }
+    
+    div#body { flex: 1 1 auto; min-width: 0; }
+    
+    div#toc-right {
+        flex: 0 0 260px;
+        margin-left: 25px; order: 3;
+        position: sticky; 
+        top: 20px;
+        
+        /* ★重要：ここにも高さ制限を追加！これでスクロールします */
+        max-height: calc(100vh - 40px); 
+        overflow-y: auto; /* 中身が溢れたらスクロール */
+        
+        overscroll-behavior: contain;
+
+
+        background-color: #f5f1e8; border: 1px solid #dcd5c6; border-radius: 5px;
+        
+        /* Firefox用スクロールバー設定 */
+        scrollbar-width: thin;
+        scrollbar-color: #c5a15a #f0eada;
+    }
+    
+    #toc-right .toc-inner { padding: 20px 15px; }
+    #menu-button, #toc-toggle-button { display: none !important; }
+}
+
+/* =================================================================
+   6.2 タブレット用 トグル式サイドバー (768px - 1200px) - スクロール修正版
+   ================================================================= */
+@media (min-width: 768px) and (max-width: 1200px) {
+    div#contents {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        position: relative;
+        z-index: 1;
+    }
+    
+    div#body {
+        flex: 1 1 auto;
+        min-width: 0;
+        order: 2;
+    }
+    
+    div#menubar,
+    div#toc-right {
+        flex: 0 0 240px;
+        margin-right: 20px;
+        position: sticky;
+        top: 20px;
+        
+        /* ★重要：高さ制限 */
+        height: calc(100vh - 40px);
+        overflow-y: auto;
+        
+        overscroll-behavior: contain;
+
+
+        background-color: #f5f1e8;
+        border: 1px solid #dcd5c6;
+        border-radius: 5px;
+        padding: 20px 15px;
+        box-sizing: border-box;
+        order: 1;
+        
+        /* Firefox用 */
+        scrollbar-width: thin;
+        scrollbar-color: #c5a15a #f0eada;
+    }
+    
+    div#toc-right { display: none; }
+    
+    body.toc-swapped div#menubar { display: none; }
+    body.toc-swapped div#toc-right { display: block; }
+    
+    #menu-button { display: none !important; }
+    #toc-toggle-button { display: block; }
+}
+
+
+
+
+/* --- 6.3 モバイル用 スライドメニュー (767px以下) --- */
+@media (max-width: 767px) {
+    #menu-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 998; }
+    body.menu-open #menu-overlay, body.toc-open #menu-overlay { display: block; }
+
+    div#menubar, div#toc-right {
+        position: fixed; top: 0; height: 100%;
+        width: 280px;
+        background: #fdfaf4;
+        transform: translateX(-100%);
+        visibility: hidden;
+        transition: transform 0.3s ease, visibility 0s 0.3s;
+        z-index: 999; overflow-y: auto;
+        padding: 20px 15px; box-sizing: border-box;
+
+        overscroll-behavior: contain;
+
+    }
+    
+    /* ★あなたのアイデアを、より堅牢な方法で実装 */
+    div#menubar {
+        margin-left: -3%; /* bodyのmargin-left: 3%を、自身のマージンで相殺する */
+    }
+    
+    div#toc-right { right: 0; transform: translateX(100%); }
+    
+    body.menu-open div#menubar,
+    body.toc-open div#toc-right {
+        transform: translateX(0);
+        visibility: visible;
+        transition: transform 0.3s ease;
+    }
+    
+    #menu-button, #toc-toggle-button { display: block; }
+}
+
+
+/* =================================================================
+   6.4 目次内部 & ボタンの共通スタイル (階層デザイン強化・スクロール装飾版)
+   ================================================================= */
+
+/* --- スクロールバーのカスタマイズ (The Royal Archive Theme) --- */
+/* 目次やメニューが長い時に、テーマに合ったスクロールバーを表示する */
+#menubar::-webkit-scrollbar,
+#toc-right::-webkit-scrollbar {
+    width: 8px; /* バーの幅 */
+}
+#menubar::-webkit-scrollbar-track,
+#toc-right::-webkit-scrollbar-track {
+    background: #f0eada; /* 背景（薄い羊皮紙色） */
+    border-radius: 4px;
+}
+#menubar::-webkit-scrollbar-thumb,
+#toc-right::-webkit-scrollbar-thumb {
+    background: #c5a15a; /* つまみ部分（金色） */
+    border-radius: 4px;
+}
+#menubar::-webkit-scrollbar-thumb:hover,
+#toc-right::-webkit-scrollbar-thumb:hover {
+    background: #a38238; /* ホバー時は少し濃く */
+}
+
+
+/* --- PC表示時の目次ヘッダー --- */
+#toc-right .toc-title {
+    font-family: 'Merriweather', 'Noto Serif JP', serif;
+    font-size: 1.1em; 
+    font-weight: 700; 
+    color: #fff;
+    background-color: #2a4a75;
+    padding: 10px 15px;
+    margin: -20px -15px 15px -15px; /* 親要素のpaddingを相殺 */
+    border-radius: 5px 5px 0 0;
+    border-bottom: 2px solid #c5a15a;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- 目次リストの階層デザイン --- */
+#toc-right .contents ul { 
+    padding-left: 0; 
+    list-style: none !important; 
+    margin: 0;
+}
+
+#toc-right .contents li { 
+    margin-bottom: 0;
+    list-style: none !important;
+}
+
+#toc-right .contents li a {
+    display: block; 
+    padding: 6px 12px; 
+    color: #3a3a3a; 
+    font-weight: 500; 
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-size: 0.9em;
+    border-bottom: 1px dotted #e0e0e0;
+    line-height: 1.4;
+}
+
+#toc-right .contents li a:hover { 
+    background-color: #f0eada; 
+    color: #2a4a75; 
+    padding-left: 16px; /* ホバー時のアニメーション */
+}
+
+/* --- 階層ごとのデザイン差別化（ここを強化しました） --- */
+
+/* Level 1 (H2相当): 金色の太線で強調 */
+#toc-right .contents > ul > li > a {
+    font-weight: 700;
+    background-color: #fff;
+    border-left: 4px solid #c5a15a; /* 金色のアクセント */
+}
+
+/* Level 2 (H3相当): 青色の細線で区別 */
+#toc-right .contents ul ul { margin-top: 0; }
+#toc-right .contents ul ul li a {
+    padding-left: 18px !important;
+    font-size: 0.9em;
+    font-weight: 500;
+    background-color: #fbfbfb; /* ほんの少しグレーに */
+    border-left: 3px solid #8faadd; /* ★追加：テーマカラーの薄い青 */
+}
+
+/* Level 3 (H4相当): 線なし、インデントのみ */
+#toc-right .contents ul ul ul li a {
+    padding-left: 35px !important;
+    font-size: 0.85em;
+    color: #555;
+    background-color: transparent;
+    border-left: none; /* 線を消す */
+}
+
+/* Level 4〜5 (H5, H6相当): さらに深く */
+#toc-right .contents ul ul ul ul li a {
+    padding-left: 50px !important;
+    font-size: 0.85em;
+    color: #666;
+    border-left: 1px solid #eee; /* 迷子にならないよう極薄のガイド線 */
+}
+#toc-right .contents ul ul ul ul ul li a {
+    padding-left: 65px !important;
+}
+
+
+/* --- モバイル・タブレット用ボタン --- */
+/* (変更なし) */
+#menu-button, #toc-toggle-button {
+    position: fixed; 
+    z-index: 1001; 
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#menu-button { 
+    top: 15px; left: 15px; 
+    width: 45px; height: 45px; 
+    background-color: #2a4a75; color: #fdfaf4;
+    border: 1px solid #1a3a65; border-radius: 5px; 
+    text-align: center; line-height: 43px; font-size: 24px; 
+}
+
+#toc-toggle-button { 
+    bottom: 20px; right: 20px; 
+    width: 60px; height: 60px; 
+    border-radius: 50%; 
+    background-color: #c5a15a; color: #fff;
+    border: 2px solid #fff; 
+    display: flex; flex-direction: column; 
+    align-items: center; justify-content: center; 
+    line-height: 1.1;
+}
+#toc-toggle-button .icon { font-size: 20px; font-weight: bold; margin-bottom: 2px; }
+#toc-toggle-button .label { font-size: 10px; font-weight: bold; }
+
+#menu-button:hover { background-color: #4b7bc4; }
+#toc-toggle-button:hover { background-color: #d4b06a; transform: scale(1.05); }
+
+
+
+/* =================================================================
+   6.5. モバイル用 コンテンツ表示調整 (画像レスポンシブ化)
+   ================================================================= */
+@media (max-width: 767px) {
+    div#body img {
+        max-width: 100%;
+        height: auto;
+        box-sizing: border-box;
+    }
+}

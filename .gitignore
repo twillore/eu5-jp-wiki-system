@@ -1,0 +1,24 @@
+# データフォルダ（シンボリックリンク）を除外
+/wiki
+/attach
+/backup
+/diff
+/counter
+/cache
+/trackback
+/log
+
+# 秘密ファイル（シンボリックリンク）を除外
+pukiwiki.secret.php
+
+# その他一時ファイル
+*.tmp
+*.log
+
+# 検索エンジンの認証ファイル
+BingSiteAuth.xml
+google*.html
+
+# サイトマップなど
+sitemap.xml
+robots.txt

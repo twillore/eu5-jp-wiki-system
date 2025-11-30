@@ -1,0 +1,1298 @@
+@charset "UTF-8";
+
+/*!
+ * PukiWiki - Yet another WikiWikiWeb clone.
+ * Copyright
+ *   2002-2021 PukiWiki Development Team
+ *   2001-2002 Originally written by yu-ji
+ * License: GPL v2 or (at your option) any later version
+ *
+ * Default CSS
+ */
+
+pre, dl, ol, p, blockquote {
+  line-height:130%;
+}
+blockquote {
+  margin-left:32px;
+}
+body,td {
+  color:black;
+  background-color:white;
+  margin-left:2%;
+  margin-right:2%;
+  font-size:90%;
+  font-family:verdana, arial, helvetica, Sans-Serif;
+}
+textarea {
+  box-sizing:border-box;
+  max-width:99.5%;
+}
+
+a:link {
+  color:#215dc6;
+  background-color:inherit;
+  text-decoration:none;
+}
+a:active {
+  color:#215dc6;
+  background-color:#CCDDEE;
+  text-decoration:none;
+}
+a:visited {
+  color:#a63d21;
+  background-color:inherit;
+  text-decoration:none;
+}
+a:hover {
+  color:#215dc6;
+  background-color:#CCDDEE;
+  text-decoration:underline;
+}
+a.external-link:not(.external-link-silent)::after {
+  content:url(../image/external-link.png);
+  margin:3px;
+}
+
+h1, h2 {
+  font-family:verdana, arial, helvetica, Sans-Serif;
+  color:inherit;
+  background-color:#DDEEFF;
+  padding:.3em;
+  border:0;
+  margin:0 0 .5em 0;
+}
+h3 {
+  font-family:verdana, arial, helvetica, Sans-Serif;
+  border-bottom:3px solid #DDEEFF;
+  border-top:1px solid #DDEEFF;
+  border-left:10px solid #DDEEFF;
+  border-right:5px solid #DDEEFF;
+
+  color:inherit;
+  background-color:#FFFFFF;
+  padding:.3em;
+  margin:0 0 .5em 0;
+}
+h4 {
+  font-family:verdana, arial, helvetica, Sans-Serif;
+  border-left:18px solid #DDEEFF;
+
+  color:inherit;
+  background-color:#FFFFFF;
+  padding:.3em;
+  margin:0 0 .5em 0;
+}
+h5, h6 {
+  font-family:verdana, arial, helvetica, Sans-Serif;
+  color:inherit;
+  background-color:#DDEEFF;
+  padding:.3em;
+  border:0;
+  margin:0 0 .5em 0;
+}
+h1.title {
+  font-size:30px;
+  font-weight:bold;
+  background-color:transparent;
+  padding:12px 0 0 0;
+  border:0;
+  margin:12px 0 0 0;
+}
+
+dt {
+  font-weight:bold;
+  margin-top:1em;
+  margin-left:1em;
+}
+
+pre {
+  border-top:#DDDDEE 1px solid;
+  border-bottom:#888899 1px solid;
+  border-left:#DDDDEE 1px solid;
+  border-right:#888899 1px solid;
+  padding:.5em;
+  margin-left:1em;
+  margin-right:2em;
+  white-space:pre-wrap;
+  word-wrap:break-word;
+  color:black;
+  background-color:#F0F8FF;
+}
+
+img {
+  border:none;
+  vertical-align:middle;
+}
+
+ul {
+  margin-top:.5em;
+  margin-bottom:.5em;
+  line-height:130%;
+}
+
+em {
+  font-style:italic;
+}
+
+strong {
+  font-weight:bold;
+}
+
+thead td.style_td,
+tfoot td.style_td {
+  color:inherit;
+  background-color:#D0D8E0;
+}
+thead th.style_th,
+tfoot th.style_th {
+  color:inherit;
+  background-color:#E0E8F0;
+}
+.style_table {
+  padding:0;
+  border:0;
+  margin:auto;
+  text-align:left;
+  color:inherit;
+  background-color:#ccd5dd;
+}
+.style_th {
+  padding:5px;
+  margin:1px;
+  text-align:center;
+  color:inherit;
+  background-color:#EEEEEE;
+}
+.style_td {
+  padding:5px;
+  margin:1px;
+  color:inherit;
+  background-color:#EEF5FF;
+}
+
+ul.list1 {
+  list-style-type:disc;
+}
+ul.list2 {
+  list-style-type:circle;
+}
+ul.list3 {
+  list-style-type:square;
+}
+ol.list1 {
+  list-style-type:decimal;
+}
+ol.list2 {
+  list-style-type:lower-roman;
+}
+ol.list3 {
+  list-style-type:lower-alpha;
+}
+
+.list-indent1 {
+  padding-left:16px;
+  margin-left:16px;
+}
+/* list-indent2,3,4 are used for leaping list level indentation */
+.list-indent2 {
+  padding-left:32px;
+  margin-left:32px;
+}
+.list-indent3 {
+  padding-left:48px;
+  margin-left:48px;
+}
+.list-indent4 {
+  padding-left:64px;
+  margin-left:64px;
+}
+
+div.ie5 {
+  text-align:center;
+}
+span.noexists {
+  color:inherit;
+  background-color:#FFFACC;
+}
+
+.small {
+  font-size:80%;
+}
+
+.super_index {
+  color:#DD3333;
+  background-color:inherit;
+  font-weight:bold;
+  font-size:60%;
+  vertical-align:super;
+}
+
+a.note_super {
+  color:#DD3333;
+  background-color:inherit;
+  font-weight:bold;
+  font-size:60%;
+  vertical-align:super;
+}
+
+div.jumpmenu {
+  font-size:60%;
+  text-align:right;
+  user-select:none;
+}
+
+hr.full_hr {
+  border-style:ridge;
+  border-color:#333333;
+  border-width:1px 0;
+}
+hr.note_hr {
+  width:90%;
+  border-style:ridge;
+  border-color:#333333;
+  border-width:1px 0;
+  text-align:center;
+  margin:1em auto 0em auto;
+}
+
+span.size1 {
+  font-size:xx-small;
+  line-height:130%;
+  text-indent:0;
+  display:inline;
+}
+span.size2 {
+  font-size:x-small;
+  line-height:130%;
+  text-indent:0;
+  display:inline;
+}
+span.size3 {
+  font-size:small;
+  line-height:130%;
+  text-indent:0;
+  display:inline;
+}
+span.size4 {
+  font-size:medium;
+  line-height:130%;
+  text-indent:0;
+  display:inline;
+}
+span.size5 {
+  font-size:large;
+  line-height:130%;
+  text-indent:0;
+  display:inline;
+}
+span.size6 {
+  font-size:x-large;
+  line-height:130%;
+  text-indent:0;
+  display:inline;
+}
+span.size7 {
+  font-size:xx-large;
+  line-height:130%;
+  text-indent:0;
+  display:inline;
+}
+
+/* html.php/catbody() */
+strong.word0 {
+  background-color:#FFFF66;
+  color:black;
+}
+strong.word1 {
+  background-color:#A0FFFF;
+  color:black;
+}
+strong.word2 {
+  background-color:#99FF99;
+  color:black;
+}
+strong.word3 {
+  background-color:#FF9999;
+  color:black;
+}
+strong.word4 {
+  background-color:#FF66FF;
+  color:black;
+}
+strong.word5 {
+  background-color:#880000;
+  color:white;
+}
+strong.word6 {
+  background-color:#00AA00;
+  color:white;
+}
+strong.word7 {
+  background-color:#886800;
+  color:white;
+}
+strong.word8 {
+  background-color:#004699;
+  color:white;
+}
+strong.word9 {
+  background-color:#990099;
+  color:white;
+}
+
+/* html.php/edit_form() */
+.edit_form {
+  clear:both;
+}
+.edit_form textarea,.edit_form select {
+  width:95%;
+}
+
+/* pukiwiki.skin.php */
+div#header {
+  padding:0;
+  margin:0;
+  word-break:break-all;
+}
+
+div#navigator {
+  clear:both;
+  padding:4px 0 0 0;
+  margin:0;
+}
+
+div#contents {
+  display:flex;
+  flex-flow:row nowrap;
+  word-break:break-all;
+  overflow-wrap:break-word;
+  word-wrap:break-word;
+}
+
+div#menubar {
+  min-width:12em;
+  max-width:12em;
+  padding:0;
+  margin:4px;
+  font-size:90%;
+  overflow:hidden;
+  order:1;
+  flex-grow:0;
+}
+div#menubar ul {
+  margin:0 0 0 1em;
+  padding:0 0 0 .5em;
+}
+div#menubar ul li {
+  line-height:110%;
+}
+div#menubar h4 {
+  font-size:110%;
+}
+
+#rightbar {
+  min-width:14em;
+  max-width:14em;
+  padding:0;
+  margin:4px;
+  font-size:90%;
+  overflow:hidden;
+  order:3;
+  flex-grow:0;
+}
+#rightbar ul {
+  margin:0 0 0 1em;
+  padding:0 0 0 .5em;
+}
+#rightbar ul li {
+  line-height:110%;
+}
+#rightbar h4 {
+  font-size:110%;
+}
+
+div#body {
+  padding:0;
+  margin:0 0 0 .5em;
+  max-width:98%;
+  order:2;
+  flex-grow:1;
+}
+
+div#note {
+  clear:both;
+  padding:0;
+  margin:0;
+  word-break:break-all;
+}
+div#attach {
+  clear:both;
+  padding:0;
+  margin:0;
+}
+div#toolbar {
+  clear:both;
+  padding:0;
+  margin:0;
+  text-align:right;
+}
+div#lastmodified {
+  font-size:80%;
+  padding:0;
+  margin:0;
+}
+div#related {
+  font-size:80%;
+  padding:0;
+  margin:16px 0 0 0;
+}
+div#related .page_passage {
+  font-size:60%;
+}
+div#footer {
+  font-size:70%;
+  padding:0;
+  margin:16px 0 0 0;
+}
+div#banner {
+  float:right;
+  margin-top:24px;
+}
+div#preview {
+  color:inherit;
+  background-color:#F5F8FF;
+}
+img#logo {
+  float:left;
+  margin-right:20px;
+}
+
+/* aname.inc.php */
+.anchor_super {
+  font-size:xx-small;
+  vertical-align:super;
+  margin-left:.5em;
+}
+
+/* list.inc.php */
+.page_passage {
+  font-size:small;
+}
+
+/* calendar*.inc.php */
+.style_calendar {
+  padding:0;
+  border:0;
+  margin:3px;
+  color:inherit;
+  background-color:#CCD5DD;
+  text-align:center;
+}
+.style_td_caltop {
+  padding:5px;
+  margin:1px;
+  color:inherit;
+  background-color:#EEF5FF;
+  font-size:80%;
+  text-align:center;
+}
+.style_td_today {
+  padding:5px;
+  margin:1px;
+  color:inherit;
+  background-color:#FFFFDD;
+  text-align:center;
+}
+.style_td_sat {
+  padding:5px;
+  margin:1px;
+  color:inherit;
+  background-color:#DDE5FF;
+  text-align:center;
+}
+.style_td_sun {
+  padding:5px;
+  margin:1px;
+  color:inherit;
+  background-color:#FFEEEE;
+  text-align:center;
+}
+.style_td_blank {
+  padding:5px;
+  margin:1px;
+  color:inherit;
+  background-color:#EEF5FF;
+  text-align:center;
+}
+.style_td_day {
+  padding:5px;
+  margin:1px;
+  color:inherit;
+  background-color:#EEF5FF;
+  text-align:center;
+}
+.style_td_week {
+  padding:5px;
+  margin:1px;
+  color:inherit;
+  background-color:#DDE5EE;
+  font-size:80%;
+  font-weight:bold;
+  text-align:center;
+}
+
+/* calendar_viewer.inc.php */
+div.calendar_viewer {
+  color:inherit;
+  background-color:inherit;
+  margin-top:20px;
+  margin-bottom:10px;
+  padding-bottom:10px;
+}
+span.calendar_viewer_left {
+  color:inherit;
+  background-color:inherit;
+  float:left;
+}
+span.calendar_viewer_right {
+  color:inherit;
+  background-color:inherit;
+  float:right;
+}
+
+/* clear.inc.php */
+.clear {
+  margin:0;
+  clear:both;
+}
+
+/* counter.inc.php */
+div.counter {
+  font-size:70%;
+}
+
+/* diff.inc.php */
+span.diff_added {
+  color:blue;
+  background-color:inherit;
+}
+span.diff_removed {
+  color:red;
+  background-color:inherit;
+}
+
+/* hr.inc.php */
+hr.short_line {
+  text-align:center;
+  width:80%;
+  border-style:solid;
+  border-color:#333333;
+  border-width:1px 0;
+}
+
+/* include.inc.php */
+h5.side_label {
+  text-align:center;
+}
+
+/* navi.inc.php */
+ul.navi {
+  margin:0;
+  padding:0;
+  text-align:center;
+}
+li.navi_none {
+  display:block;
+  float:none;
+}
+li.navi_left {
+  display:block;
+  float:left;
+  text-align:left;
+}
+li.navi_right {
+  display:block;
+  float:right;
+  text-align:right;
+}
+
+/* new.inc.php */
+span.comment_date {
+  font-size:x-small;
+}
+span.new1 {
+  color:red;
+  background-color:transparent;
+  font-size:x-small;
+}
+span.new5 {
+  color:green;
+  background-color:transparent;
+  font-size:xx-small;
+}
+
+/* comment.inc.php */
+._p_comment_form input[name="msg"] {
+  max-width:90%;
+}
+
+/* pcomment.inc.php */
+._p_pcomment_form input[name="msg"] {
+  max-width:90%;
+}
+
+/* article.inc.php */
+._p_article_form input[name="subject"] {
+  max-width:82%;
+}
+
+/* popular.inc.php */
+span.counter {
+  font-size:70%;
+}
+
+/* ref.inc.php */
+div.img_margin {
+  margin-left:32px;
+  margin-right:32px;
+}
+
+/* vote.inc.php */
+td.vote_label {
+  color:inherit;
+  background-color:#FFCCCC;
+}
+td.vote_td1 {
+  color:inherit;
+  background-color:#DDE5FF;
+}
+td.vote_td2 {
+  color:inherit;
+  background-color:#EEF5FF;
+}
+
+/* topicpath.inc.php */
+span.topicpath-slash {
+  margin:0 0.2em;
+}
+span.topicpath-top {
+  user-select:none;
+}
+
+/* bugtrack.inc.php */
+tr.bugtrack_list_header th {
+  background-color:#ffffcc;
+}
+tr.bugtrack_list_header th:nth-child(1) {
+  min-width: 7em;
+}
+tr.bugtrack_list_header th:nth-child(2) {
+  min-width: 2em;
+}
+tr.bugtrack_list_header th:nth-child(3) {
+  min-width: 4em;
+}
+tr.bugtrack_list_header th:nth-child(4) {
+  min-width: 4em;
+}
+tr.bugtrack_list_header th:nth-child(5) {
+  min-width: 3em;
+}
+tr.bugtrack_state_proposal td {
+  background-color:#ccccff;
+}
+tr.bugtrack_state_accept td {
+  background-color:#ffcc99;
+}
+tr.bugrack_state_resolved td {
+  background-color:#ccffcc;
+}
+tr.bugtrack_state_pending td {
+  background-color:#ffccff;
+}
+tr.bugtrack_state_cancel td {
+  background-color:#cccccc;
+}
+tr.bugtrack_state_undef td {
+  background-color:#ff3333;
+}
+._p_bugtrack_form input[name="summary"],
+._p_bugtrack_form textarea {
+  box-sizing:border-box;
+  width:35em;
+  max-width:99.5%;
+}
+
+/* tracker.inc.php */
+._p_tracker_form th {
+  min-width:5em;
+}
+
+/* search2.inc.php  */
+.search-result-page-summary {
+  font-size:70%;
+  color:gray;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+/* Mobile-friendly Responsive layout */
+@media (max-width:767px) {
+  div#contents {
+    flex-flow:column wrap;
+  }
+  div#menubar {
+    width:auto;
+    max-width:none;
+    font-size:100%;
+    order:2;
+  }
+  div#rightbar {
+    width:auto;
+    max-width:none;
+    font-size:100%;
+    order:3;
+  }
+  div#body {
+    order:1;
+  }
+  div#body img {
+    max-width:95%;
+    height:auto;
+  }
+
+  ._p_tracker_form th,._p_tracker_form td {
+    display:block;
+    text-align:left !important;
+    width:auto !important;
+    margin:0;
+  }
+  ._p_tracker_form td input[type=text],
+  ._p_tracker_form td textarea {
+    box-sizing:border-box;
+    width:99.5%;
+  }
+
+  tr.bugtrack_list_header th:nth-child(1) {
+    min-width: 4em;
+  }
+  tr.bugtrack_list_header th:nth-child(2) {
+    min-width: 1em;
+  }
+  tr.bugtrack_list_header th:nth-child(3) {
+    min-width: 1em;
+  }
+  tr.bugtrack_list_header th:nth-child(4) {
+    min-width: 3em;
+  }
+  tr.bugtrack_list_header th:nth-child(5) {
+    min-width: 3em;
+  }
+  ._p_bugtrack_form th,._p_bugtrack_form td {
+    display:block;
+    text-align:left !important;
+    margin:0;
+  }
+  ._p_bugtrack_form input[name="summary"],
+  ._p_bugtrack_form textarea {
+    box-sizing:border-box;
+    width:99.5%;
+  }
+}
+
+@media print {
+  a:link,
+  a:visited {
+    text-decoration:underline;
+  }
+  img#logo,
+  div#navigator,
+  div#menubar,
+  div#rightbar,
+  div#related,
+  div#attach,
+  div#toolbar {
+    display:none;
+  }
+}
+
+
+/* ===============================================
+   EU5 Wiki Custom Style - Ver.2 (Feedback Adjusted)
+   =============================================== */
+
+/* -----------------------------------------------
+   1. ベース設計：羊皮紙とインク
+   ----------------------------------------------- */
+/* Google Fontsから、日本語対応の見出し用・本文用フォントを読み込む */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@700&display=swap');
+
+body {
+  background-color: #fdfaf4;
+  color: #3a3a3a;
+  font-size: 16px;
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.7;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+/* -----------------------------------------------
+   2. リンク：権威を示すロイヤルブルー
+   ----------------------------------------------- */
+a:link, a:active, a:visited {
+  color: #2a4a75;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+a:hover {
+  color: #4b7bc4;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a.external-link:not(.external-link-silent)::after {
+  opacity: 0.7;
+}
+
+/* -----------------------------------------------
+   3. 見出し：年代記の章立て（フォントと余白を調整）
+   ----------------------------------------------- */
+/* 全ての見出しに、日本語対応の美しい明朝体を指定 */
+h1, h2, h3, h4, h5, h6 {
+  /* 日本語は'Noto Serif JP'で、英語は'Merriweather'で表示する */
+  font-family: 'Merriweather', 'Noto Serif JP', serif;
+  font-weight: 700;
+}
+
+/* h1 (ページタイトル) */
+h1.title {
+  font-size: 2.2em;
+  border-bottom: 2px solid #c5a15a;
+  padding-bottom: 0.5em;
+  margin: 1em 0 0.8em 0; /* 余白を調整 */
+  color: #2d2a26;
+  background-color: transparent; /* PukiWikiデフォルトCSSの上書き */
+}
+
+/* h2 (大見出し) */
+h2 {
+  font-size: 1.8em;
+  color: #2a4a75;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 0.4em 0;
+  margin: 1.2em 0 0.8em 0; /* 余白を調整 */
+  background-color: transparent; /* PukiWikiデフォルトCSSの上書き */
+}
+
+/* h3 (中見出し) */
+h3 {
+  font-size: 1.4em;
+  color: #3a3a3a;
+  border-left: 5px solid #2a4a75;
+  padding: 0.3em 0.8em;
+  margin: 1.2em 0 0.8em 0; /* 余白を調整 */
+  /* ↓ PukiWikiデフォルトCSSの上書き */
+  background-color: transparent;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* h4 (小見出し) */
+h4 {
+  font-size: 1.1em;
+  color: #3a3a3a;
+  border-left: 10px solid #f0eada;
+  padding: 0.2em 0.8em;
+  margin: 1.2em 0 0.8em 0; /* 余白を調整 */
+  background-color: transparent; /* PukiWikiデフォルトCSSの上書き */
+}
+
+h5, h6 {
+  font-size: 1em;
+  font-style: italic;
+  color: #555;
+  margin: 1.2em 0 0.8em 0; /* 余白を調整 */
+  background-color: transparent; /* PukiWikiデフォルトCSSの上書き */
+  border: none;
+  padding: 0;
+}
+
+/* -----------------------------------------------
+   4. テーブル（表）：戦略データを見やすく
+   ----------------------------------------------- */
+.style_table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: transparent;
+  margin: 1.5em auto;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.style_th, .style_td {
+  padding: 10px 12px;
+  border: 1px solid #dcdcdc;
+  background-color: #ffffff;
+  text-align: left;
+}
+.style_th {
+  background-color: #f2f2f2;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* -----------------------------------------------
+   5. その他：引用やコードブロックの調整
+   ----------------------------------------------- */
+blockquote {
+  border-left: 4px solid #c5a15a;
+  padding: 0.5em 1.5em;
+  margin: 1.5em 0;
+  background-color: rgba(245, 241, 232, 0.5);
+}
+pre {
+  background-color: #f2f2f2;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+/* -----------------------------------------------
+   6. ヘッダーとフッターの調整
+   ----------------------------------------------- */
+div#header {
+  border-bottom: 1px solid #dcdcdc;
+  padding-bottom: 1em;
+  margin:0; /* PukiWikiデフォルトCSSの上書き */
+}
+div#footer {
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid #dcdcdc;
+  color: #777;
+}
+
+
+/* ===============================================
+   EU5 Wiki Custom Style - Ver.2.1 (Final Adjustments)
+   =============================================== */
+
+/* -----------------------------------------------
+   診断1への処方：整形済みテキストの再定義
+   ----------------------------------------------- */
+pre {
+  background-color: #f5f1e8; /* 羊皮紙より少しだけ濃い、落ち着いた背景色 */
+  border: 1px solid #dcd5c6; /* テーマに合った、柔らかい境界線 */
+  border-radius: 4px;
+  padding: 1em;
+  color: #4a4a4a; /* 文字色も少し調整 */
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; /* 可読性の高い等幅フォントを指定 */
+  line-height: 1.5; /* 行間を少し広げて読みやすく */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* -----------------------------------------------
+   診断2への処方：フォーム要素のスタイル定義
+   ----------------------------------------------- */
+/* テキスト入力ボックス */
+._p_comment_form input[type="text"] {
+  background-color: #fff;
+  border: 1px solid #dcd5c6;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-family: 'Noto Sans JP', sans-serif; /* 本文と同じフォントを適用 */
+  font-size: 0.9em;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+/* テキスト入力ボックスが選択された時 */
+._p_comment_form input[type="text"]:focus {
+  outline: none;
+  border-color: #2a4a75; /* テーマカラーの青でハイライト */
+  box-shadow: 0 0 0 2px rgba(42, 74, 117, 0.1);
+}
+
+/* 送信ボタン */
+._p_comment_form input[type="submit"] {
+  background-color: #2a4a75; /* テーマカラーの青を背景に */
+  color: #ffffff; /* 文字色を白に */
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  cursor: pointer; /* マウスカーソルを指の形に */
+  transition: background-color 0.2s ease;
+}
+/* 送信ボタンにマウスが乗った時 */
+._p_comment_form input[type="submit"]:hover {
+  background-color: #4b7bc4; /* 少し明るい青に */
+}
+
+/* -----------------------------------------------
+   診断3への処方：注釈エリアのスタイル定義
+   ----------------------------------------------- */
+div#note {
+  clear: both;
+  font-size: 0.85em; /* フォントサイズを小さくし、本文との階層差を明確に */
+  color: #5a5a5a;
+  margin-top: 2.5em; /* 上のコンテンツとの余白を十分に確保 */
+  padding-top: 1.5em; /* 境界線との余白 */
+  border-top: 1px solid #dcd5c6; /* 本文とを区切る境界線 */
+}
+
+/* ===============================================
+   EU5 Wiki Custom Style - Ver.2.2 (Corrective Actions)
+   =============================================== */
+
+/* -----------------------------------------------
+   処方1：テーブルの背景色をテーマに調和させる
+   ----------------------------------------------- */
+.style_td {
+  background-color: #fbf8f2; /* 純白から、羊皮紙に馴染むオフホワイトに変更 */
+}
+
+/* -----------------------------------------------
+   処方4：注釈エリアのスタイルを強制適用する
+   ----------------------------------------------- */
+/* div#note と、その内部の全ての要素に適用する */
+div#note, div#note * {
+  font-size: 0.85em !important; /* !importantで他のスタイルを上書き */
+  font-family: 'Noto Sans JP', sans-serif !important; /* 本文と同じフォントを強制 */
+  font-style: normal !important; /* 斜体をリセット */
+  font-weight: 400 !important; /* 太字をリセット */
+  color: #5a5a5a !important;
+}
+
+
+/* ===============================================
+   EU5 Wiki Custom Style - Ver.2.3 (MenuBar Hotfix)
+   =============================================== */
+
+/* -----------------------------------------------
+   処方2：MenuBar内の見出しスタイルを専用に上書き
+   ----------------------------------------------- */
+/* MenuBar内の全ての見出しから、本文用のスタイルをリセット */
+div#menubar h1,
+div#menubar h2,
+div#menubar h3,
+div#menubar h4,
+div#menubar h5,
+div#menubar h6 {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 1em 0 0.5em 0;
+  font-family: 'Noto Sans JP', sans-serif; /* 本文用のサンセリフ体に戻す */
+  color: #3a3a3a;
+}
+
+/* MenuBar内の見出しのフォントサイズを、コンパクトに再定義 */
+div#menubar h2 { font-size: 1.1em; font-weight: 500; border-bottom: 1px solid #dcd5c6;}
+div#menubar h3 { font-size: 1em;   font-weight: 500; }
+div#menubar h4 { font-size: 0.9em; font-weight: 500; }
+
+/* ===============================================
+   EU5 Wiki Custom Style - Ver.2.4 (Form Element Hotfix)
+   =============================================== */
+
+/* MenuBar内の全てのフォーム要素を包括的にターゲットする */
+
+/* テキスト入力ボックス */
+div#menubar form input[type="text"] {
+  width: 80%;
+  box-sizing: border-box; /* padding等を含めて幅を計算 */
+  margin-bottom: 5px;
+}
+
+/* 送信ボタン */
+div#menubar form input[type="submit"] {
+  width: 80%;
+  box-sizing: border-box;
+}
+
+/* ===============================================
+   EU5 Wiki Custom Style - Ver.2.5 (Pcomment UI Integration)
+   =============================================== */
+
+/* -----------------------------------------------
+   1. コメント欄全体のコンテナ
+   ----------------------------------------------- */
+div.pcomment_part {
+  margin-top: 2em;
+  padding-top: 1.5em;
+  border-top: 1px solid #dcd5c6; /* 本文とを区切る境界線 */
+}
+
+/* -----------------------------------------------
+   2. 個別のコメントブロック
+   ----------------------------------------------- */
+div.pcomment_body {
+  padding: 1em 1.5em;
+  margin-bottom: 1em;
+  background-color: #ffffff; /* コメントの背景を、読みやすい白に */
+  border: 1px solid #dcd5c6;
+  border-left: 5px solid #c5a15a; /* 左側にテーマカラーの金色のアクセント */
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* 引用されたコメント（返信先）のスタイル */
+div.pcomment_body blockquote {
+  border-left: 3px solid #ccc;
+  padding: 0.5em 1em;
+  margin: 0.5em 0 1em 0;
+  background-color: #f5f1e8; /* 引用部分の背景を少し変える */
+  font-size: 0.9em;
+  color: #5a5a5a;
+}
+
+/* -----------------------------------------------
+   3. コメントのメタ情報（名前、日付、各種リンク）
+   ----------------------------------------------- */
+div.pcomment_name {
+  font-weight: 500;
+  font-size: 0.9em;
+  color: #3a3a3a;
+  margin-bottom: 0.5em;
+}
+
+div.pcomment_name span,
+div.pcomment_name a {
+  font-size: 0.9em;
+  font-weight: 400;
+  color: #777;
+  margin-left: 0.8em;
+}
+
+/* -----------------------------------------------
+   4. コメント投稿フォーム
+   ----------------------------------------------- */
+form._p_pcomment_form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #dcd5c6;
+  border-radius: 4px;
+  padding: 10px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1em;
+  min-height: 80px; /* テキストエリアの最小の高さを確保 */
+  margin-bottom: 10px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+form._p_pcomment_form textarea:focus {
+  outline: none;
+  border-color: #2a4a75;
+  box-shadow: 0 0 0 2px rgba(42, 74, 117, 0.1);
+}
+
+/* 「お名前」入力欄と「投稿」ボタンは、以前の定義を再利用・確認 */
+form._p_pcomment_form input[type="text"] {
+  background-color: #fff;
+  border: 1px solid #dcd5c6;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: 0.9em;
+}
+form._p_pcomment_form input[type="submit"] {
+  background-color: #2a4a75;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+form._p_pcomment_form input[type="submit"]:hover {
+  background-color: #4b7bc4;
+}
+
+/* ===============================================
+   EU5 Wiki Custom Style - Ver.2.6 (Accessibility Hotfix)
+   =============================================== */
+
+/* -----------------------------------------------
+   フッターのテキストコントラスト比を修正
+   ----------------------------------------------- */
+div#footer {
+  color: #5E5E5E; /* ← 新しい、基準値を満たす灰色 */
+}
+
+/* MenuBar内のリンクのタップ領域を確保する */
+div#menubar ul li a {
+  display: inline-block; /* paddingを有効にするため */
+  padding: 4px 0;      /* 上下に4pxの余白を追加 */
+}
+
+
+
+/* ===============================================
+   Mobile Off-Canvas Menu
+ ゆいかせ2025/9/23
+   =============================================== */
+@media (max-width: 767px) {
+
+    /* 1. ボタンを、表示し、スタイリングする */
+    #menu-button {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1000;
+        font-size: 24px;
+        padding: 5px 10px;
+        background: rgba(255,255,255,0.8);
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* 2. メニューバーを、画面の外に、隠す */
+    div#menubar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px; /* メニューの幅 */
+        background: #fdfaf4;
+        transform: translateX(-100%); /* 画面の左外へ、完全に移動 */
+        transition: transform 0.3s ease; /* 滑らかな動きを、定義 */
+        z-index: 999;
+        overflow-y: auto; /* 内容が多い場合に、スクロールさせる */
+    }
+
+    /* 3. 「menu-open」クラスが付与された時に、メニューバーを、表示する */
+    body.menu-open div#menubar {
+        transform: translateX(0); /* 元の位置へ、戻す */
+    }
+}
+
+/* PCでは、ボタンを、隠す */
+@media (min-width: 768px) {
+    #menu-button {
+        display: none;
+    }
+}
+
+
+
+/* MenuBar内の、h4にも、我々の、美しいスタイルを、強制的に、適用する */
+div#menubar h4 {
+  font-size: 0.9em;
+  color: #3a3a3a;
+  border-left: 10px solid #f0eada;
+  padding: 0.2em 0.8em;
+  margin: 1.2em 0 0.8em 0;
+  font-family: 'Merriweather', 'Noto Serif JP', serif;
+  font-weight: 700;
+}
+
+
+
+
+
